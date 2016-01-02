@@ -14,7 +14,7 @@ water heater and dishwasher are not leaking.
 
 This is an example display:
 
-![picture of dashboard main window](pictures/homeAlertDashboard.jpg?raw=true)
+![picture of dashboard main window](https://raw.githubusercontent.com/mhdawson/micro-app-alert-dashboard/master/pictures/homeAlertDashboard.jpg?raw=true)
 
 
 The following projects can be used to connect the required sensors
@@ -92,7 +92,7 @@ alert-dashboard app page will be created.
 
 The following is the page shown for a sample configuration:
 
-![picture of dashboard main window](pictures/homeAlertDashboard.jpg?raw=true)
+![picture of dashboard main window](https://raw.githubusercontent.com/mhdawson/micro-app-alert-dashboard/master/pictures/homeAlertDashboard.jpg?raw=true)
 
 # Key Depdencies
 
