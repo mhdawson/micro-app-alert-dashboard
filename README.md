@@ -34,17 +34,17 @@ The configuration entries that must be updated include:
   which is authorized to connect to the mqtt server.
 * dashboardEntries - array in which each entry  which contain an id, name,
   alertTopic, resetTopic and delay.  The id must be a unique value, the
-  name name is what will be display as the label in the dashboard. The alertTopic
+  name name is what will be displayed as the label in the dashboard. The alertTopic
   is the topic which indicates the entry should be alerted, while the resetTopic
   is the topic which indicates the entry should be reset(optional).
-  The delay (optional) is the time between the the entry is alerted and when the
+  The delay (optional) is the time between when the entry is alerted and when the
   status for the entry will be set to alerted and notifications sent out.  The
   entry will be shown as "yellow" in the dashboard during this time. The value
   pubished to the topics does not matter, any message published to the topics
   will be used as the trigger
 * twilio - twilio configuration data.  Object with fields for
   twilioAccountSID, twilioAccountAuthToken, twilioToNumber, twilioFromNumber
-* serverPort - port on which the dashboard listens for connectsion
+* serverPort - port on which the dashboard listens for connections
 * title - title for the dashbaord paged (optional)
 
 As a micro-app the dashboard also supports other options like authentication and
@@ -55,8 +55,6 @@ The following is an example of the configuration file:
 
 <PRE>
 {
-  "useLaunchWindow2": "true",
-  "closeLaunchWindow": "false",
   "title": "House Alert Data",
   "serverPort": 3000,
   "mqttServerUrl": "your mqtt server",
@@ -102,12 +100,12 @@ As a micro-app the onetime password app depends on the micro-app-framework:
 * [micro-app-framework npm](https://www.npmjs.com/package/micro-app-framework)
 * [micro-app-framework github](https://github.com/mhdawson/micro-app-framework)
 
+See the documentation on the micro-app-framework for more information on general
+configurtion options that are availble (ex using tls, authentication, serverPort, etc)
+
 ## twilio
 
 [Twilio](https://www.twilio.com/)
 
-See the documentation on the micro-app-framework for more information on general
-configurtion options that are availble (ex using tls, authentication, serverPort, etc)
 
 # TODO
-
