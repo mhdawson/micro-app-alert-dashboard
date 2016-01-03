@@ -16,6 +16,16 @@ This is an example display:
 
 ![picture of dashboard main window](https://raw.githubusercontent.com/mhdawson/micro-app-alert-dashboard/master/pictures/homeAlertDashboard.jpg?raw=true)
 
+The following is the sensor I used to monitor for water leaks:
+
+![water sensor](https://raw.githubusercontent.com/mhdawson/micro-app-alert-dashboard/master/pictures/watersensor.jpg?raw=true)
+
+which is available from ebay here: (ebay listing)[http://www.ebay.ca/itm/4pcs-Wireless-Water-Intrusion-Leakage-Sensor-Water-leak-433MHz-For-Alarm-System-/191732541917?hash=item2ca42669dd] 
+
+For the garage door I used a custom arduino based sensor as none of the
+avialable sensors provided both an open and close notification.  I'll add
+a link to the project for this sensor once I add it to github
+
 
 The following projects can be used to connect the required sensors
 
