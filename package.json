@@ -21,7 +21,8 @@
     "iot",
     "mqtt",
     "dashboard",
-    "micro-app"
+    "micro-app",
+    "sensor"
   ],
   "author": {
     "name": "Michael Dawson"
@@ -30,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/mhdawson/micro-app-alert-dashboard/issues"
   },
-  "homepage": "https://github.com/mhdawson/micro-app-alert-edashboard#readme",
+  "homepage": "https://github.com/mhdawson/micro-app-alert-dashboard#readme",
   "contributors": [
     {
       "name": "Michael Dawson",
