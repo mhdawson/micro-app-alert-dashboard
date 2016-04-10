@@ -105,7 +105,7 @@ The following is the page shown for a sample configuration:
 # Key Depdencies
 
 ## micro-app-framework
-As a micro-app the onetime password app depends on the micro-app-framework:
+As a micro-app the micro-app-alert-dashboard app depends on the micro-app-framework:
 
 * [micro-app-framework npm](https://www.npmjs.com/package/micro-app-framework)
 * [micro-app-framework github](https://github.com/mhdawson/micro-app-framework)
