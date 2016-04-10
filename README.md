@@ -55,7 +55,7 @@ The configuration entries that must be updated include:
 * twilio - twilio configuration data.  Object with fields for
   twilioAccountSID, twilioAccountAuthToken, twilioToNumber, twilioFromNumber
 * serverPort - port on which the dashboard listens for connections
-* title - title for the dashbaord paged (optional)
+* title - title for the dashbaord page (optional)
 
 As a micro-app the dashboard also supports other options like authentication and
 tls for the dashboard connection.  See the documentation for the micro-app-framework
