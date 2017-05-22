@@ -1,9 +1,13 @@
 {
   "title": "House Alert Data",
   "serverPort": 3000,
-  "mqttServerUrl": "your mqtt url",
+  "mqttServerUrl": "mqtt:10.1.1.186:1883",
   "dashboardEntries": [ { "id": "garagedoor", "name": "Garage Door", "alertTopic": "house/2262/350/0101FFFF0000", "resetTopic": "house/2262/350/0101FFFF0001", "delay": 300 },
                         { "id": "dishwasher", "name": "Dishwasher", "alertTopic": "house/2262/350/FFF0FFFF0001", "resetTopic": "", "delay": "0" }, 
                         { "id": "watertank", "name": "Water Tank", "alertTopic": "house/2262/350/FFF0FFFF0010", "resetTopic": "", "delay": "0" } ],
-  "twilio": { "twilioAccountSID": "your value", "twilioAccountAuthToken": "your value", "twilioToNumber": "your value" , "twilioFromNumber": "your value" }
+  "notify": {
+    "mqttSmsBridge": { "enabled": true,
+                       "serverUrl": "mqtt:10.1.1.186:1883",
+                       "topic": "house/sms" }
+  }
 }
