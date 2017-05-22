@@ -20,7 +20,7 @@ The following is the sensor I used to monitor for water leaks:
 
 ![water sensor](https://raw.githubusercontent.com/mhdawson/micro-app-alert-dashboard/master/pictures/watersensor.jpg?raw=true)
 
-which is available from ebay here: (ebay listing)[http://www.ebay.ca/itm/4pcs-Wireless-Water-Intrusion-Leakage-Sensor-Water-leak-433MHz-For-Alarm-System-/191732541917?hash=item2ca42669dd] 
+which is available from ebay here: (ebay listing)[http://www.ebay.ca/itm/4pcs-Wireless-Water-Intrusion-Leakage-Sensor-Water-leak-433MHz-For-Alarm-System-/191732541917?hash=item2ca42669dd]
 
 For the garage door I used a custom arduino based sensor as none of the
 avialable sensors provided both an open and close notification.  I'll add
@@ -52,10 +52,29 @@ The configuration entries that must be updated include:
   entry will be shown as "yellow" in the dashboard during this time. The value
   pubished to the topics does not matter, any message published to the topics
   will be used as the trigger
-* twilio - twilio configuration data.  Object with fields for
-  twilioAccountSID, twilioAccountAuthToken, twilioToNumber, twilioFromNumber
 * serverPort - port on which the dashboard listens for connections
 * title - title for the dashbaord page (optional)
+* notify - configuration for notification options
+  * mqttSmsBridge - element with the following sub-elements:
+    * enabled - set to true if you want notifications to
+      be sent using this provider.
+    * serverUrl - url for the mqtt server to which the
+      bridge is connected.
+    * topic - topic on which the bridge listens for
+      notification requests.
+    * certs - directory which contains the keys/certs
+      required to connect to the mqtt server if the
+      url is of type `mqtts`.
+  * voipms - element with the following sub-elements:
+    * enabled - set to true if you want notifications to
+      be sent using this provider.
+    * user - voip.ms API userid.
+    * password - voip.ms API password.
+    * did - voip.ms did(number) from which the SMS will be sent.
+    * dst - number to which the SMS will be sent.
+  * twilio - element with the following sub-elements:
+    * enabled - set to true if you want notifications to
+      be sent using this provider.
 
 As a micro-app the dashboard also supports other options like authentication and
 tls for the dashboard connection.  See the documentation for the micro-app-framework
@@ -71,7 +90,11 @@ The following is an example of the configuration file:
   "dashboardEntries": [ { "id": "garagedoor", "name": "Garage Door", "alertTopic": "house/2262/350/0101FFFF0000", "resetTopic": "house/2262/350/0101FFFF0001", "delay": 300 },
                         { "id": "dishwasher", "name": "Dishwasher", "alertTopic": "house/2262/350/FFF0FFFF0001", "resetTopic": "", "delay": "0" },
                         { "id": "watertank", "name": "Water Tank", "alertTopic": "house/2262/350/FFF0FFFF0010", "resetTopic": "", "delay": "0" } ],
-  "twilio": { "twilioAccountSID": "your value", "twilioAccountAuthToken": "your value", "twilioToNumber": "your value" , "twilioFromNumber": "your value" }
+  "notify": {
+    "mqttSmsBridge": { "enabled": true,
+                       "serverUrl": "your mqtt server",
+                       "topic": "house/sms" }
+  }
 }
 </PRE>
 
@@ -113,9 +136,9 @@ As a micro-app the micro-app-alert-dashboard app depends on the micro-app-framew
 See the documentation on the micro-app-framework for more information on general
 configurtion options that are availble (ex using tls, authentication, serverPort, etc)
 
-## twilio
+## micro-app-notify-client
 
-[Twilio](https://www.twilio.com/)
+* [micro-app-notify-client](https://github.com/mhdawson/micro-app-notify-client)
 
-
-# TODO
+The micro-app-notify-client is used to send notifications through sms and other
+means when necessary.
