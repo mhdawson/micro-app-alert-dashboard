@@ -1,6 +1,6 @@
 {
   "name": "micro-app-alert-dashboard",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Dashboard to display home status and generate alerts when appropriate",
   "main": "lib/server.js",
   "scripts": {
